@@ -1,0 +1,26 @@
+
+//- definimos el mixin con el nombre head y pagina como parametro donde le pasaremos los casos, 0= indes, 1= galeria, 2= contactar cuando en cada plantilla de cada pagina tengamos que llamar al mixin. Esto claro esta suponiendo que hay varias paginas
+
+mixin head(pagina)
+    meta(charset='utf-8')
+    //- seo basico
+
+    //- creamos el mixin, cuando página sea igual a 0, incluira la información del array necesario
+
+    case pagina
+        //-index
+        when 0 
+            title= seo.index[0]
+            //-llamamos al objeto seo, y le decimos la parte que queremos rellenar dependiendo de la página en la que estemos y la posicion del array donde esta el contenido que queremos meter en el meta
+            meta(name='description' content=seo.index[1])
+
+            //-Robots de google
+            meta(name='robots' content=seo.index[2])
+            //-schema del restaurante seo importante para el restaurante
+            script(name='schema' content=seo.index[3])
+            //-meta de palabras clave ya en deshuso pero todavia lo tienen en cuenta
+            meta(name='keywords' content=seo.index[4])
+            //-metas de autor
+            meta(name='author' content=seo.index[5])
+            //-metas de copyright
+            meta(name='copyright' content=seo.index[6])

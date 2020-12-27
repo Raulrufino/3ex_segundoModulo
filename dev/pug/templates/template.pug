@@ -1,13 +1,19 @@
+//- ZONA DE VARIABLES
+include ../config/config 
+
 
 //-ZONA MIXIN PICTURES
 include ../mixins/mixin_peke
 include ../mixins/mixin_pictureBig
 include ../mixins/mixin_completo
+include ../mixins/mixin_head
 
 <!DOCTYPE html>
 html(lang="es")
     //-HEAD
-    include head.pug
+    head
+        block head
+            include head.pug
     //-BODY    
     body
         //- MAIN SEO - Contenido important
